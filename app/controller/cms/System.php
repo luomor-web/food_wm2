@@ -19,7 +19,7 @@ class System extends BaseController
         return app('json')->go($data);
     }
     //按类型获取配置信息
-    public function getConfigType()
+    public function getConfigType($type)
     {
         $data=SysConfigModel::where(['type'=>1,'is_use'=>1])->order('id asc')->
         field('id,key,value,desc,switch,other')->select();
