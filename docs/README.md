@@ -1,4 +1,10 @@
 ```shell
+mkdir runtime
+chmod 777 runtime
+chmod 777 data
+mkdir public/uploads
+chmod 777 public/uploads
+chmod 777 config/database.php
 cd docker
 sudo docker-compose up -d
 sudo docker-compose up down
@@ -16,8 +22,12 @@ root
 show databases;
 use wm
 show tables;
+update food_admins set password='4932b4967d140a16d509863e6d167410';
+
+http://82.157.54.206:8001/install
 
 http://82.157.54.206:8001/
+http://82.157.54.206:8001/h5/
 http://82.157.54.206:8001/index.php
 
 http://82.157.54.206:8001/cms/
