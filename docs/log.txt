@@ -16,3 +16,14 @@ show databases;
 | wm                 |
 +--------------------+
 5 rows in set (0.00 sec)
+
+环境检测
+环境	最低配置	当前配置	是否符合
+操作系统	不限	Linux	
+php版本	≥ 7.4	7.4.27	
+session	支持	支持	
+PDO	开启	已开启	
+PDO_Mysql	开启	已开启	
+上传限制	≥ 2M	40M	
+data目录	可写	可写	
+/uploads目录	可写	不可写	

@@ -1,6 +1,9 @@
 ```shell
 mkdir runtime
 chmod 777 runtime
+chmod 777 data
+mkdir public/uploads
+chmod 777 public/uploads
 cd docker
 sudo docker-compose up -d
 sudo docker-compose up down
