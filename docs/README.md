@@ -17,7 +17,10 @@ show databases;
 use wm
 show tables;
 
+http://82.157.54.206:8001/install
+
 http://82.157.54.206:8001/
+http://82.157.54.206:8001/h5
 http://82.157.54.206:8001/index.php
 
 http://82.157.54.206:8001/cms/
