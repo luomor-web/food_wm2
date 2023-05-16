@@ -1,0 +1,18 @@
+sudo docker-compose ps
+  Name                Command               State                 Ports
+-------------------------------------------------------------------------------------
+food-db    docker-entrypoint.sh --cha ...   Up      0.0.0.0:3316->3306/tcp, 33060/tcp
+food-php   php-fpm -F --pid /opt/bitn ...   Up      0.0.0.0:9001->9000/tcp
+food-web   nginx -g daemon off;             Up      0.0.0.0:8001->80/tcp
+
+show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| wm                 |
++--------------------+
+5 rows in set (0.00 sec)
