@@ -2,4 +2,4 @@
 /.vscode
 /runtime
 *.log
-.env
+# .env
