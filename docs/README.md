@@ -1,4 +1,6 @@
 ```shell
+mkdir runtime
+chmod 777 runtime
 cd docker
 sudo docker-compose up -d
 sudo docker-compose up down
