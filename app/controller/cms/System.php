@@ -7,7 +7,7 @@ use app\model\SysConfig as SysConfigModel;
 use ruhua\bases\BaseController;
 use think\facade\App;
 use think\facade\Db;
-
+use think\facade\Request;
 
 class System extends BaseController
 {
@@ -21,7 +21,7 @@ class System extends BaseController
     //按类型获取配置信息
     public function getConfigType()
     {
-        $type = $_GET['type'];
+        $type = Request::param('type');
         $data=SysConfigModel::where(['type'=>$type,'is_use'=>1])->order('id asc')->
         field('id,key,value,desc,switch,other')->select();
         return app('json')->go($data);
