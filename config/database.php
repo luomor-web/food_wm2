@@ -9,14 +9,14 @@ return [
     'connections'     => [
         'mysql' => [
             'type'            => env('database.type', 'mysql'),
-            'hostname'        => env('database.hostname', 'localhost'),
+            'hostname'        => env('database.hostname', 'food-db'),
             'database'        => env('database.database', 'wm'),
             'username'        => env('database.username', 'root'),
-            'password'        => env('database.password', ''),
+            'password'        => env('database.password', 'root'),
             'hostport'        => env('database.hostport', '3306'),
             'params'          => [],
             'charset'         => env('database.charset', 'utf8'),
-            'prefix'          => env('database.prefix', 'news_'),
+            'prefix'          => env('database.prefix', 'food_'),
             'deploy'          => 0,
             'rw_separate'     => false,
             'master_num'      => 1,
