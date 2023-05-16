@@ -22,6 +22,7 @@ class System extends BaseController
     public function getConfigType()
     {
         $type = Request::param('type');
+        print_r($_REQUEST);
         $data=SysConfigModel::where(['type'=>$type,'is_use'=>1])->order('id asc')->
         field('id,key,value,desc,switch,other')->select();
         return app('json')->go($data);
