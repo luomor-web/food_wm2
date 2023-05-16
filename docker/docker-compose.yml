@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  food-db:
+    image: mysql:8.0
+    container_name: food-db
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - MYSQL_DATABASE=wm
+    command:
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --default-authentication-plugin=mysql_native_password
+    security_opt:
+      - seccomp:unconfined
+    volumes:
+      - ./db/conf.d:/etc/mysql/conf.d
+      - ./db/data:/var/lib/mysql
+      - ./db/init-sql:/docker-entrypoint-initdb.d
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "3316:3306"
+
+  food-php:
+    depends_on:
+      - food-db
+    image: bitnami/php-fpm:7.4
+    container_name: food-php
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9001:9000"
+    volumes:
+      - ../:/app
+      - /etc/localtime:/etc/localtime
+
+  food-web:
+    depends_on:
+      - food-php
+    image: nginx:1.15.12-alpine
+    container_name: food-web
+    restart: unless-stopped
+    ports:
+      - "8001:80"
+    volumes:
+      - ../:/app
+      - ./nginx-conf:/etc/nginx/conf.d
+      - /etc/localtime:/etc/localtime
