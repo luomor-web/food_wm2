@@ -24,6 +24,9 @@ use wm
 show tables;
 update food_admins set password='4932b4967d140a16d509863e6d167410';
 
+select id,`key`,value,`desc`,switch,other from food_sys_config limit 1;
+elect id,`key`,value,`desc`,switch,other from food_sys_config where type=1 and is_use=1 limit 1;
+
 http://82.157.54.206:8001/install
 
 http://82.157.54.206:8001/
