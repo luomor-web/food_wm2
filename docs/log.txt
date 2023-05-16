@@ -27,3 +27,50 @@ PDO_Mysql	开启	已开启
 上传限制	≥ 2M	40M	
 data目录	可写	可写	
 /uploads目录	可写	不可写	
+
+{
+msg: "安装失败:file_put_contents(/app/config/database.php): failed to open stream: Permission denied",
+code: 9999,
+success: false,
+request_url: "/install/start"
+}
+
+show tables;
++------------------------+
+| Tables_in_wm           |
++------------------------+
+| food_address           |
+| food_admins            |
+| food_article           |
+| food_auth_group        |
+| food_auth_group_access |
+| food_auth_rule         |
+| food_auto_revert       |
+| food_banner            |
+| food_banner_item       |
+| food_category          |
+| food_coupon            |
+| food_desk              |
+| food_form              |
+| food_form_data         |
+| food_image             |
+| food_machine           |
+| food_machine_work      |
+| food_mb_diy            |
+| food_mb_navs           |
+| food_money_log         |
+| food_order             |
+| food_order_goods       |
+| food_order_log         |
+| food_pros              |
+| food_pros_sku          |
+| food_rate              |
+| food_resource          |
+| food_sys_backup        |
+| food_sys_config        |
+| food_tui               |
+| food_user              |
+| food_user_address      |
+| food_user_coupon       |
++------------------------+
+33 rows in set (0.00 sec)
